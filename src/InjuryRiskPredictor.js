@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { Camera, Activity, AlertTriangle, CheckCircle, Users, BarChart3 } from 'lucide-react';
+import { Camera, Activity, AlertTriangle, CheckCircle, BarChart3 } from 'lucide-react';
 
 // Constants and configurations
 const EXERCISE_CONFIG = {
@@ -84,7 +84,30 @@ const RISK_MESSAGES = {
     landingForce: { high: 'Excessive impact forces', moderate: 'Hard landing detected' },
     asymmetry: { high: 'Uneven landing pattern', moderate: 'Slight landing asymmetry' }
   },
-  // ... other exercises (truncated for brevity)
+  lunge: {
+    kneeAlignment: { high: 'Severe knee tracking error - injury risk!', moderate: 'Monitor knee alignment' },
+    hipDrop: { high: 'Excessive hip drop - instability detected', moderate: 'Minor hip imbalance' },
+    trunkLean: { high: 'Severe trunk lean - core weakness', moderate: 'Slight lateral lean detected' },
+    stability: { high: 'Poor dynamic stability', moderate: 'Stability needs improvement' }
+  },
+  overhead: {
+    shoulderMobility: { high: 'Limited shoulder range - injury risk', moderate: 'Shoulder mobility restricted' },
+    spinalExtension: { high: 'Excessive spine arch - back strain risk', moderate: 'Monitor spinal position' },
+    armSymmetry: { high: 'Severe arm asymmetry detected', moderate: 'Minor asymmetry in arms' },
+    coreStability: { high: 'Poor core stability - compensation risk', moderate: 'Core stability needs work' }
+  },
+  deadlift: {
+    spinalNeutral: { high: 'Spine deviation - serious injury risk!', moderate: 'Monitor spine alignment' },
+    kneeTracking: { high: 'Knee valgus during lift', moderate: 'Minor knee tracking issue' },
+    hipHinge: { high: 'Poor hip hinge pattern', moderate: 'Hip hinge needs improvement' },
+    barPath: { high: 'Inefficient bar path', moderate: 'Minor bar path deviation' }
+  },
+  running: {
+    overstride: { high: 'Severe overstriding - injury risk!', moderate: 'Slight overstriding detected' },
+    cadence: { high: 'Very low cadence - inefficient gait', moderate: 'Cadence below optimal' },
+    verticalOscillation: { high: 'Excessive vertical bounce', moderate: 'Increased vertical movement' },
+    footStrike: { high: 'Heavy heel striking', moderate: 'Monitor foot strike pattern' }
+  }
 };
 
 const RECOMMENDATIONS = {
@@ -94,7 +117,36 @@ const RECOMMENDATIONS = {
     depth: { high: 'Improve hip and ankle flexibility', moderate: 'Gradually increase range of motion' },
     symmetry: { high: 'Address unilateral weaknesses', moderate: 'Single-leg strengthening exercises' }
   },
-  // ... other exercises (truncated for brevity)
+  jump: {
+    kneeValgus: { high: 'Land softly, strengthen glutes and hips', moderate: 'Practice controlled landings' },
+    ankleAlignment: { high: 'Improve ankle stability exercises', moderate: 'Focus on ankle positioning' },
+    landingForce: { high: 'Practice soft landings, increase eccentric strength', moderate: 'Land with bent knees' },
+    asymmetry: { high: 'Address bilateral imbalances', moderate: 'Practice symmetric landings' }
+  },
+  lunge: {
+    kneeAlignment: { high: 'Strengthen hip abductors, practice proper tracking', moderate: 'Keep knee over toe' },
+    hipDrop: { high: 'Strengthen glutes and core, practice level hips', moderate: 'Focus on hip stability' },
+    trunkLean: { high: 'Strengthen core, improve lateral stability', moderate: 'Maintain upright posture' },
+    stability: { high: 'Practice single-leg balance exercises', moderate: 'Work on dynamic stability' }
+  },
+  overhead: {
+    shoulderMobility: { high: 'Improve shoulder flexibility, thoracic spine mobility', moderate: 'Stretch shoulders regularly' },
+    spinalExtension: { high: 'Strengthen core, practice neutral spine', moderate: 'Avoid excessive back arch' },
+    armSymmetry: { high: 'Address muscle imbalances, unilateral training', moderate: 'Focus on even arm movement' },
+    coreStability: { high: 'Strengthen deep core muscles', moderate: 'Engage core during press' }
+  },
+  deadlift: {
+    spinalNeutral: { high: 'Master hip hinge, strengthen core and glutes', moderate: 'Maintain neutral spine' },
+    kneeTracking: { high: 'Strengthen glutes, improve hip mobility', moderate: 'Keep knees aligned' },
+    hipHinge: { high: 'Practice hip hinge pattern, improve mobility', moderate: 'Lead with hips' },
+    barPath: { high: 'Practice proper bar path, improve technique', moderate: 'Keep bar close to body' }
+  },
+  running: {
+    overstride: { high: 'Increase cadence, practice midfoot striking', moderate: 'Shorten stride length' },
+    cadence: { high: 'Focus on quicker steps, use metronome training', moderate: 'Gradually increase step rate' },
+    verticalOscillation: { high: 'Focus on forward motion, reduce bounce', moderate: 'Run more efficiently forward' },
+    footStrike: { high: 'Practice midfoot landing, gradual transition', moderate: 'Land under center of mass' }
+  }
 };
 
 // Custom hooks
@@ -346,7 +398,7 @@ const InfoPanel = () => (
 
 // Main Component
 const InjuryRiskPredictor = () => {
-  const { videoRef, isActive: cameraActive, startCamera, stopCamera } = useCamera();
+  const { videoRef, startCamera, stopCamera } = useCamera();
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [riskLevel, setRiskLevel] = useState('safe');
   const [riskPercentage, setRiskPercentage] = useState(0);
