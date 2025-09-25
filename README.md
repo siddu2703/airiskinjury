@@ -24,8 +24,8 @@ A React-based web application that provides real-time biomechanical analysis to 
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd ai-injury-risk-predictor
+git clone https://github.com/siddu2703/airiskinjury.git
+cd airiskinjury
 ```
 
 2. Install dependencies:
