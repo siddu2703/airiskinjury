@@ -353,12 +353,14 @@ const FeedbackPanel = ({ feedback }) => (
             className={`p-4 rounded-lg border-l-4 ${
               item.type === 'danger' ? 'bg-red-50 border-red-500' :
               item.type === 'warning' ? 'bg-yellow-50 border-yellow-500' :
+              item.type === 'info' ? 'bg-blue-50 border-blue-500' :
               'bg-green-50 border-green-500'
             }`}
           >
             <p className={`font-semibold ${
               item.type === 'danger' ? 'text-red-800' :
               item.type === 'warning' ? 'text-yellow-800' :
+              item.type === 'info' ? 'text-blue-800' :
               'text-green-800'
             }`}>
               {item.message}
@@ -452,8 +454,14 @@ const InjuryRiskPredictor = () => {
     if (totalRisk < 10) {
       newFeedback.push({
         type: 'success',
-        message: `Excellent ${exerciseConfig.name.toLowerCase()} form! Low injury risk detected`,
-        recommendation: 'Maintain this movement pattern'
+        message: `✅ Excellent ${exerciseConfig.name.toLowerCase()} technique detected!`,
+        recommendation: 'Continue with this optimal movement pattern. Consider progressive overload.'
+      });
+    } else if (totalRisk >= 10 && totalRisk < 25) {
+      newFeedback.push({
+        type: 'info',
+        message: `ℹ️ Good ${exerciseConfig.name.toLowerCase()} form with minor areas for improvement`,
+        recommendation: 'Focus on the highlighted metrics to optimize your technique.'
       });
     }
 

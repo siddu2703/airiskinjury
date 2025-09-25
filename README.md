@@ -1,89 +1,201 @@
-# AI Injury Risk Predictor
+# 🏃‍♂️ AI Injury Risk Predictor
 
-A React-based web application that provides real-time biomechanical analysis to predict injury risk during various exercises. This system analyzes movement patterns and provides immediate feedback to help prevent sports injuries.
+A comprehensive React-based web application that provides real-time biomechanical analysis to predict injury risk during various exercises. This system analyzes movement patterns and provides immediate feedback to help prevent sports injuries.
 
-## Features
+🌐 **Live Demo**: https://siddu2703.github.io/airiskinjury
 
-- **Real-time Movement Analysis**: Live camera feed analysis with biomechanical assessment
-- **Multi-Exercise Support**: Supports 6 different exercises (Squat, Jump Landing, Lunge, Overhead Press, Deadlift, Running Gait)
-- **Risk Assessment**: Color-coded risk levels with percentage scores
-- **Real-time Feedback**: Immediate recommendations and corrective cues
-- **Detailed Metrics**: Exercise-specific biomechanical measurements
-- **Modern UI**: Clean, responsive interface built with Tailwind CSS
+## ✨ Key Features
 
-## Supported Exercises
+### 🎥 Dual Analysis Modes
+- **Live Camera Analysis**: Real-time movement assessment using webcam
+- **Video Analysis**: Upload videos or analyze YouTube content with demo presets
 
-1. **Squat** - Analyzes knee valgus, forward lean, depth, and symmetry
-2. **Jump Landing** - Evaluates landing mechanics, ankle alignment, and impact forces
-3. **Lunge** - Monitors knee tracking, hip drop, trunk lean, and stability
-4. **Overhead Press** - Assesses shoulder mobility, spinal extension, and core stability
-5. **Deadlift** - Examines spine neutrality, knee tracking, and bar path
-6. **Running Gait** - Analyzes stride patterns, cadence, and foot strike
+### 🏋️ Multi-Exercise Support
+Supports 6 different exercises with specific biomechanical analysis:
+1. **Squat** 🏋️‍♀️ - Knee valgus, forward lean, depth, symmetry
+2. **Jump Landing** 🏀 - Landing mechanics, ankle alignment, impact forces
+3. **Lunge** 🤸‍♀️ - Knee tracking, hip drop, trunk lean, stability
+4. **Overhead Press** 🏋️‍♂️ - Shoulder mobility, spinal extension, core stability
+5. **Deadlift** 💪 - Spine neutrality, knee tracking, bar path
+6. **Running Gait** 🏃‍♂️ - Stride patterns, cadence, foot strike
 
-## Installation
+### 📊 Advanced Analytics
+- **Color-coded Risk Assessment**: Visual risk levels with percentage scores
+- **Real-time Metrics**: Exercise-specific biomechanical measurements
+- **Intelligent Feedback**: Contextual recommendations and corrective cues
+- **Professional Reporting**: Detailed analysis with actionable insights
 
-1. Clone the repository:
+## 🎬 Demo Videos for Presentations
+
+The Video Analysis mode includes curated demo videos perfect for presentations:
+
+### Perfect Squat Form - Low Risk ✅
+- Demonstrates excellent technique
+- Shows low injury risk assessment
+- Green indicators and positive feedback
+
+### Poor Squat Form - High Risk ⚠️
+- Illustrates common mistakes
+- Triggers high-risk alerts
+- Red indicators with corrective recommendations
+
+### Jump Landing Analysis - Moderate Risk 🟡
+- Balanced risk assessment
+- Mixed feedback for educational purposes
+
+## 🚀 Quick Start
+
+### Option 1: Use Live Demo
+Visit **https://siddu2703.github.io/airiskinjury** and start analyzing immediately!
+
+### Option 2: Run Locally
 ```bash
+# Clone the repository
 git clone https://github.com/siddu2703/airiskinjury.git
 cd airiskinjury
-```
 
-2. Install dependencies:
-```bash
+# Install dependencies
 npm install
-```
 
-3. Start the development server:
-```bash
+# Start development server
 npm start
+
+# Open http://localhost:3000
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🎯 How to Use for Presentations
 
-## Technologies Used
+### 1. **Live Camera Demo**
+- Click "Live Camera" tab
+- Select exercise type (Squat recommended)
+- Click "Start Analysis"
+- Demonstrate movement in front of camera
+- Show real-time risk assessment and feedback
 
-- **React 18** - Frontend framework
-- **Tailwind CSS** - Styling and responsive design
-- **Lucide React** - Icon library
-- **WebRTC** - Camera access for live video feed
+### 2. **Video Analysis Demo**
+- Click "Video Analysis" tab
+- Choose from preset demo videos:
+  - **Perfect Squat Form**: Shows low risk (green)
+  - **Poor Squat Form**: Shows high risk (red)
+  - **Jump Landing**: Shows moderate risk (yellow)
+- Click "Start Analysis" to see automatic assessment
+- Explain the biomechanical metrics and recommendations
 
-## How It Works
+### 3. **Custom Video Analysis**
+- Upload your own exercise videos
+- Paste YouTube URLs for analysis
+- Compare different movement patterns
 
-1. **Pose Detection**: The system analyzes body landmarks and joint positions in real-time
-2. **Biomechanical Analysis**: Calculates key risk factors like knee valgus and movement asymmetry
-3. **Risk Prediction**: Machine learning algorithms predict injury probability and provide feedback
+## 🛠️ Technical Architecture
 
-## Usage
+### Frontend Technologies
+- **React 18** - Modern component-based architecture
+- **React Router** - Navigation between analysis modes
+- **Tailwind CSS** - Responsive design system
+- **Lucide React** - Professional iconography
 
-1. Select an exercise from the dropdown menu
-2. Click "Start Analysis" to begin camera feed and movement analysis
-3. Perform the selected exercise in front of the camera
-4. View real-time risk assessment and feedback
-5. Follow the provided recommendations to improve movement quality
+### Analysis Engine
+- **Biomechanical Algorithms** - Movement pattern recognition
+- **Risk Assessment Models** - Multi-factor injury prediction
+- **Real-time Processing** - 100ms analysis intervals
+- **Smart Feedback System** - Contextual recommendations
 
-## Risk Levels
+### Browser APIs
+- **MediaDevices API** - Camera access for live analysis
+- **File API** - Video upload functionality
+- **Canvas API** - Real-time visualization overlays
 
-- **Safe (0%)**: Excellent form, low injury risk
-- **Low Risk (1-25%)**: Good form with minor areas for improvement
-- **Moderate Risk (26-50%)**: Some concerning movement patterns detected
-- **High Risk (51%+)**: Multiple risk factors present, immediate attention needed
+## 📈 Risk Assessment Methodology
 
-## Future Enhancements
+### Risk Calculation
+Each exercise has weighted risk factors:
+- **High Risk**: Exceeds danger thresholds (50%+ total risk)
+- **Moderate Risk**: Moderate concern levels (25-50% total risk)
+- **Low Risk**: Minor issues detected (1-25% total risk)
+- **Safe**: Excellent form (0% risk)
 
-- Integration with actual pose detection libraries (MediaPipe, PoseNet)
-- Machine learning model training on real biomechanical data
-- Video recording and analysis playback
-- Progress tracking and historical data
-- Integration with wearable devices
+### Biomechanical Metrics
+- **Angular Measurements**: Joint angles and deviations
+- **Symmetry Analysis**: Left vs right side comparison
+- **Range of Motion**: Depth and mobility assessment
+- **Stability Metrics**: Balance and control evaluation
 
-## Contributing
+## 🎨 User Experience
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+- **Intuitive Navigation**: Clear mode switching
+- **Real-time Feedback**: Immediate visual and textual cues
+- **Professional Design**: Clean, medical-grade interface
+- **Responsive Layout**: Works on desktop, tablet, and mobile
+- **Accessibility**: Screen reader compatible, keyboard navigation
 
-## License
+## 🔬 Use Cases
 
-This project is licensed under the MIT License.
+### Healthcare & Rehabilitation
+- Physical therapy assessment
+- Post-injury movement screening
+- Progress tracking and documentation
 
-## Disclaimer
+### Sports & Fitness
+- Athletic performance optimization
+- Injury prevention programs
+- Technique coaching and correction
 
-This application is for educational and demonstration purposes. It should not be used as a substitute for professional medical or fitness advice. Always consult with qualified healthcare providers before starting any exercise program.
+### Education & Research
+- Biomechanics education
+- Movement science demonstrations
+- Research data collection
+
+## 📱 Browser Compatibility
+
+- **Chrome/Edge**: Full feature support
+- **Firefox**: Complete functionality
+- **Safari**: Camera access supported
+- **Mobile**: Responsive design, touch-friendly
+
+## 🚀 Deployment
+
+### GitHub Pages (Current)
+```bash
+npm run deploy
+```
+
+### Custom Hosting
+```bash
+npm run build
+# Deploy 'build' folder to your hosting provider
+```
+
+## 🤝 Contributing
+
+We welcome contributions! Here's how to get started:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## ⚠️ Important Disclaimer
+
+This application is designed for **educational and demonstration purposes only**. It should not be used as a substitute for professional medical, physical therapy, or fitness advice.
+
+**Always consult with qualified healthcare providers before:**
+- Starting any exercise program
+- Making changes to rehabilitation protocols
+- Interpreting injury risk assessments
+
+The AI analysis provides general movement quality feedback and should not be considered a medical diagnosis or professional assessment.
+
+## 📞 Support & Feedback
+
+- **Issues**: Report bugs via [GitHub Issues](https://github.com/siddu2703/airiskinjury/issues)
+- **Feature Requests**: Submit enhancement ideas
+- **Documentation**: Contribute to project documentation
+
+---
+
+**Built with ❤️ for better movement and injury prevention**
