@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/airiskinjury/static/css/main.2e6b0c0f.css",
+    "main.js": "/airiskinjury/static/js/main.f3501c5b.js",
+    "index.html": "/airiskinjury/index.html",
+    "main.2e6b0c0f.css.map": "/airiskinjury/static/css/main.2e6b0c0f.css.map",
+    "main.f3501c5b.js.map": "/airiskinjury/static/js/main.f3501c5b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2e6b0c0f.css",
+    "static/js/main.f3501c5b.js"
+  ]
+}
