@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/airiskinjury/static/css/main.145b41f7.css",
-    "main.js": "/airiskinjury/static/js/main.86868a50.js",
+    "main.css": "/airiskinjury/static/css/main.98455f7f.css",
+    "main.js": "/airiskinjury/static/js/main.3e43a14d.js",
     "index.html": "/airiskinjury/index.html",
-    "main.145b41f7.css.map": "/airiskinjury/static/css/main.145b41f7.css.map",
-    "main.86868a50.js.map": "/airiskinjury/static/js/main.86868a50.js.map"
+    "main.98455f7f.css.map": "/airiskinjury/static/css/main.98455f7f.css.map",
+    "main.3e43a14d.js.map": "/airiskinjury/static/js/main.3e43a14d.js.map"
   },
   "entrypoints": [
-    "static/css/main.145b41f7.css",
-    "static/js/main.86868a50.js"
+    "static/css/main.98455f7f.css",
+    "static/js/main.3e43a14d.js"
   ]
 }
